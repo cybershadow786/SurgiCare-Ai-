@@ -218,6 +218,8 @@
     sendPhotoBtn.addEventListener('click', () => {
         // Show the data URL of the captured image
         alert('Image Data URL:\n' + capturedImage.src + '\n\nNote: The image is not saved to disk. It is only in memory (data URL in the browser).');
+        console.log('Captured Image Data URL:', capturedImage.src);
+        
         // Hide the preview and show the upload section again
         stopCamera();
         previewSection.style.display = 'none';
