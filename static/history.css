@@ -1,0 +1,39 @@
+/* iPhone SE (2nd Gen) – up to 750px */
+@media (min-width: 0px) and (max-width: 750px) {
+  /* Styles for iPhone SE */
+}
+
+/* iPhone XR – 751px to 828px */
+@media (min-width: 751px) and (max-width: 828px) {
+  /* Styles for iPhone XR */
+}
+
+/* Galaxy Z Fold 5 (folded) – 829px to 904px */
+@media (min-width: 829px) and (max-width: 904px) {
+  /* Styles for Galaxy Z Fold 5 (Folded) */
+}
+
+/* Pixel 7 / Galaxy A51-A71 – 905px to 1080px */
+@media (min-width: 905px) and (max-width: 1080px) {
+  /* Styles for Pixel 7 & Galaxy A51/A71 */
+}
+
+/* iPhone 12 Pro – 1081px to 1170px */
+@media (min-width: 1081px) and (max-width: 1170px) {
+  /* Styles for iPhone 12 Pro */
+}
+
+/* iPhone 14 Pro Max – 1171px to 1290px */
+@media (min-width: 1171px) and (max-width: 1290px) {
+  /* Styles for iPhone 14 Pro Max */
+}
+
+/* Samsung Galaxy S8+ – 1291px to 1440px */
+@media (min-width: 1291px) and (max-width: 1440px) {
+  /* Styles for Galaxy S8+ */
+}
+
+/* Samsung Galaxy S20 Ultra – 1441px to 1440px (same width as S8+) */
+@media (min-width: 1441px) and (max-width: 1440px) {
+  /* Styles for Galaxy S20 Ultra */
+}
