@@ -216,15 +216,12 @@
         startCamera(); // Restart the camera
     });
     sendPhotoBtn.addEventListener('click', () => {
-        // Here you would typically send the captured image (capturedImage.src) to your backend or chat
-        alert('Photo sent! (Implement your send logic here)');
-        // For now, we'll just hide the preview and show the upload section again
+        // Show the data URL of the captured image
+        alert('Image Data URL:\n' + capturedImage.src + '\n\nNote: The image is not saved to disk. It is only in memory (data URL in the browser).');
+        // Hide the preview and show the upload section again
         stopCamera();
         previewSection.style.display = 'none';
         uploadSection.style.display = 'block';
-
-        // Optionally, you can simulate adding the photo to the chat here
-        // showChat(); // If you have this function defined elsewhere
     });
 </script>
 <script src="https://cdn.tailwindcss.com/3.4.10"></script>
