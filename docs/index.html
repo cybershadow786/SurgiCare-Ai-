@@ -387,7 +387,18 @@
     }
 
     // Event Listeners
-    openCameraBtn.addEventListener('click', startCamera);
+    // openCameraBtn.addEventListener('click', startCamera);
+    // cancelCameraBtn.addEventListener('click', () => {
+    //     stopCamera();
+    //     cameraSection.style.display = 'none';
+    //     uploadSection.style.display = 'block';
+    // });
+    // captureBtn.addEventListener('click', capturePhoto);
+    // retakeBtn.addEventListener('click', () => {
+    //     previewSection.style.display = 'none';
+    //     startCamera(); // Restart the camera
+    // });
+     openCameraBtn.addEventListener('click', startCamera);
     cancelCameraBtn.addEventListener('click', () => {
         stopCamera();
         cameraSection.style.display = 'none';
@@ -398,6 +409,16 @@
         previewSection.style.display = 'none';
         startCamera(); // Restart the camera
     });
+    // sendPhotoBtn.addEventListener('click', () => {
+    //     // Show the data URL of the captured image
+    //     alert('Image Data URL:\n' + capturedImage.src + '\n\nNote: The image is not saved to disk. It is only in memory (data URL in the browser).');
+    //     console.log('Captured Image Data URL:', capturedImage.src);
+        
+    //     // Hide the preview and show the upload section again
+    //     stopCamera();
+    //     previewSection.style.display = 'none';
+    //     uploadSection.style.display = 'block';
+    // });
     sendPhotoBtn.addEventListener('click', async () => {
         // Show the chat interface
         uploadSection.style.display = 'none';
