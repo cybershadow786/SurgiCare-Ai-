@@ -526,7 +526,7 @@
         stopCamera();
         cameraSection.style.display = "none";
         uploadSection.style.display = "block";
-        initialScreen.style.display = "flex";
+        initialScreen.style.visibility = "visible";
       });
       captureBtn.addEventListener("click", capturePhoto);
       retakeBtn.addEventListener("click", () => {
@@ -576,7 +576,7 @@
       backToUploadBtn.addEventListener("click", () => {
         chatInterface.style.display = "none";
         uploadSection.style.display = "block";
-        initialScreen.style.display = "flex";
+        initialScreen.style.visibility = "vi";
         
         // Clear chat messages
         chatMessages.innerHTML = "";
