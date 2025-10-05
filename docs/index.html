@@ -288,7 +288,7 @@
               <canvas
                 id="canvas"
                 width="320"
-                height="260"
+                height="240"
                 class="border-2 border-[var(--secondary-color)] rounded-lg hidden"
               ></canvas>
               <!-- Image element to display the captured photo -->
@@ -362,6 +362,7 @@
       const sendPhotoBtn = document.getElementById("send-photo-btn");
       const backToUploadBtn = document.getElementById("back-to-upload");
 
+      const initialScreen = document.getElementById("initial-screen");
       const uploadSection = document.getElementById("upload-section");
       const cameraSection = document.getElementById("camera-section");
       const previewSection = document.getElementById("preview-section");
@@ -427,6 +428,7 @@
 
         // Hide camera, show preview
         cameraSection.style.display = "none";
+        initialScreen.style.display = "none";
         previewSection.style.display = "block";
       }
 
@@ -566,6 +568,7 @@
       backToUploadBtn.addEventListener("click", () => {
         chatInterface.style.display = "none";
         uploadSection.style.display = "block";
+        
         // Clear chat messages
         chatMessages.innerHTML = "";
       });
