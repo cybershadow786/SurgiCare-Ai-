@@ -1,477 +1,583 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link crossorigin="" href="https://fonts.gstatic.com  " rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-    <link href="  https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link crossorigin="" href="https://fonts.gstatic.com  " rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="  https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <title>Stitch Design</title>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
     <script src="  https://cdn.tailwindcss.com  ?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
-        :root {
-            --primary-color: #991b1b;
-            --secondary-color: #374151;
-            --background-color: #111827;
-            --text-primary: #ffffff;
-            --text-secondary: #9ca3af;
-        }
+      :root {
+        --primary-color: #991b1b;
+        --secondary-color: #374151;
+        --background-color: #111827;
+        --text-primary: #ffffff;
+        --text-secondary: #9ca3af;
+      }
     </style>
     <style>
-        #chat-interface {
-            display: none;
-        }
-        /* Hide the camera section by default */
-        #camera-section {
-            display: none;
-        }
-        /* Hide the preview section by default */
-        #preview-section {
-            display: none;
-        }
-        
-        /* Chat interface styles */
-        .chat-container {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .message {
-            max-width: 80%;
-            padding: 0.75rem 1rem;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
-            word-wrap: break-word;
-        }
-        
-        .bot-message {
-            align-self: flex-start;
-            background-color: #2d3748;
-            color: #ffffff;
-        }
-        
-        .user-message {
-            align-self: flex-end;
-            background-color: #991b1b;
-            color: #ffffff;
-        }
-        
-        .message-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            margin-right: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        
-        .bot-avatar {
-            background-color: #4a5568;
-            color: white;
-        }
-        
-        .user-avatar {
-            background-color: #f56565;
-            color: white;
-        }
-        
-        .image-preview {
-            max-width: 100%;
-            max-height: 200px;
-            border-radius: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        
-        .chat-header {
-            padding: 1rem;
-            border-bottom: 1px solid #2d3748;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .back-button {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background-color: #2d3748;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        
-        .chat-input-container {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem;
-            border-top: 1px solid #2d3748;
-        }
-        
-        .chat-input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border-radius: 1.5rem;
-            background-color: #2d3748;
-            color: #ffffff;
-            border: none;
-            outline: none;
-        }
-        
-        .send-button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #991b1b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
+      #chat-interface {
+        display: none;
+      }
+      /* Hide the camera section by default */
+      #camera-section {
+        display: none;
+      }
+      /* Hide the preview section by default */
+      #preview-section {
+        display: none;
+      }
+     
+
+      .send-btn span.material-symbols-outlined {
+        font-size: 22px;
+        line-height: 0;
+      }
+
+      /* Chat interface styles */
+      .chat-container {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .message {
+        max-width: 80%;
+        padding: 0.75rem 1rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+      }
+
+      .bot-message {
+        align-self: flex-start;
+        background-color: #2d3748;
+        color: #ffffff;
+      }
+
+      .user-message {
+        align-self: flex-end;
+        background-color: #991b1b;
+        color: #ffffff;
+      }
+
+      .message-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .bot-avatar {
+        background-color: #4a5568;
+        color: white;
+      }
+
+      .user-avatar {
+        background-color: #f56565;
+        color: white;
+      }
+
+      .image-preview {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .chat-header {
+        padding: 1rem;
+        border-bottom: 1px solid #2d3748;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .back-button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #2d3748;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .chat-input-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        border-top: 1px solid #2d3748;
+      }
+
+      .chat-input {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border-radius: 1.5rem;
+        background-color: #2d3748;
+        color: #ffffff;
+        border: none;
+        outline: none;
+      }
+
+      .send-button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #991b1b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
     </style>
-</head>
-<body class="bg-[var(--background-color)] font-sans">
-<div class="relative mx-auto flex h-[100dvh] w-full max-w-md flex-col overflow-hidden bg-[var(--background-color)]" style='font-family: Inter, "Noto Sans", sans-serif;'>
-    <div class="flex flex-1 flex-col">
-        <header class="sticky top-0 z-10 flex items-center justify-between border-b border-[#233348] bg-[var(--background-color)] p-4">
-            <h1 class="text-lg font-bold text-[var(--text-primary)] text-center w-full">SurgiCare Ai</h1>
+  </head>
+  <body class="bg-[var(--background-color)] font-sans">
+    <div
+      class="relative mx-auto flex h-[100dvh] w-full max-w-md flex-col overflow-hidden bg-[var(--background-color)]"
+      style="font-family: Inter, 'Noto Sans', sans-serif"
+    >
+      <div class="flex flex-1 flex-col">
+        <header
+          class="sticky top-0 z-10 flex items-center justify-between border-b border-[#233348] bg-[var(--background-color)] p-4"
+        >
+          <h1
+            class="text-lg font-bold text-[var(--text-primary)] text-center w-full"
+          >
+            SurgiCare Ai
+          </h1>
         </header>
 
         <!-- Initial Screen -->
         <div class="flex flex-1 flex-col" id="initial-screen">
-            <div class="flex flex-1 flex-col items-center justify-center p-4">
-                <div class="flex flex-col items-center text-center">
-                    <h2 class="text-3xl font-bold text-center text-[var(--text-primary)]">Hi! SurgiCare is here to assist you.</h2>
-                </div>
+          <div class="flex flex-1 flex-col items-center justify-center p-4">
+            <div class="flex flex-col items-center text-center">
+              <h2
+                class="text-3xl font-bold text-center text-[var(--text-primary)]"
+              >
+                Hi! SurgiCare is here to assist you.
+              </h2>
             </div>
+          </div>
         </div>
 
         <!-- Chat Interface (Hidden by default) -->
         <div id="chat-interface" class="hidden flex-1 flex-col">
-            <div class="chat-header">
-                <div class="back-button" id="back-to-upload">
-                    <span class="material-symbols-outlined text-white"> arrow_back </span>
-                </div>
-                <h2 class="text-lg font-bold text-[var(--text-primary)]">Chat</h2>
+          <div class="chat-header">
+            <div class="back-button" id="back-to-upload">
+              <span class="material-symbols-outlined text-white">
+                arrow_back
+              </span>
             </div>
-            
-            <div class="chat-container" id="chat-messages">
-                <!-- Messages will be added here dynamically -->
+            <h2 class="text-lg font-bold text-[var(--text-primary)]">Chat</h2>
+          </div>
+
+          <div class="chat-container" id="chat-messages">
+            <!-- Messages will be added here dynamically -->
+          </div>
+
+          <div class="chat-input-container">
+            <input
+              type="text"
+              class="chat-input"
+              id="message-input"
+              placeholder="Type your message..."
+            />
+            <div class="send-button" id="send-message">
+              <span class="material-symbols-outlined text-white"> send </span>
             </div>
-            
-            <div class="chat-input-container">
-                <input type="text" class="chat-input" id="message-input" placeholder="Type your message..." />
-                <div class="send-button" id="send-message">
-                    <span class="material-symbols-outlined text-white"> send </span>
-                </div>
-            </div>
+          </div>
         </div>
 
         <!-- Upload Section (Original) -->
         <div class="sticky bottom-0 bg-[var(--background-color)]">
-            <div class="p-4" id="upload-section">
-                <div class="flex flex-col items-center gap-4">
-                    <!-- Replace the file input label with a camera button -->
-                    <button id="open-camera-btn" class="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-[var(--secondary-color)] rounded-lg cursor-pointer hover:bg-[var(--secondary-color)]/20">
-                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                            <span class="material-symbols-outlined text-5xl text-[var(--text-secondary)]">
-                                camera_alt
-                            </span>
-                            <p class="mb-2 text-sm text-[var(--text-secondary)]"><span class="font-semibold">Take a Photo</span></p>
-                            <p class="text-xs text-[var(--text-secondary)]">Tap to use your camera</p>
-                        </div>
-                    </button>
-                    <button class="w-full flex h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)] mt-2 gap-2">
-                        <span class="material-symbols-outlined">send</span>
-                        <span class="flex items-center">Send</span>
-                    </button>
+          <div class="p-4" id="upload-section">
+            <div class="flex flex-col items-center gap-4">
+              <!-- Replace the file input label with a camera button -->
+              <button
+                id="open-camera-btn"
+                class="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-[var(--secondary-color)] rounded-lg cursor-pointer hover:bg-[var(--secondary-color)]/20"
+              >
+                <div
+                  class="flex flex-col items-center justify-center pt-5 pb-6"
+                >
+                  <span
+                    class="material-symbols-outlined text-5xl text-[var(--text-secondary)]"
+                  >
+                    camera_alt
+                  </span>
+                  <p class="mb-2 text-sm text-[var(--text-secondary)]">
+                    <span class="font-semibold">Take a Photo</span>
+                  </p>
+                  <p class="text-xs text-[var(--text-secondary)]">
+                    Tap to use your camera
+                  </p>
                 </div>
+              </button>
+              <button
+                class="w-full flex h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)] mt-2 gap-2"
+              >
+                <span class="material-symbols-outlined">send</span>
+                <span class="flex items-center">Send</span>
+              </button>
             </div>
+          </div>
 
-            <!-- Camera Section (Hidden by default) -->
-            <div class="p-4" id="camera-section">
-                <div class="flex flex-col items-center gap-4">
-                    <!-- Video element to display the camera stream -->
-                    <video id="video" width="320" height="240" autoplay class="border-2 border-[var(--secondary-color)] rounded-lg"></video>
-                    <!-- Button to capture the photo -->
-                    <button id="capture-btn" class="w-full flex h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)] mt-2">
-                        <span class="material-symbols-outlined mr-2"> camera </span>
-                        Capture Photo
-                    </button>
-                    <!-- Button to go back to upload section -->
-                    <button id="cancel-camera-btn" class="w-full flex h-12 items-center justify-center rounded-full bg-gray-500 text-[var(--text-primary)] mt-2">
-                        Cancel
-                    </button>
-                </div>
+          <!-- Camera Section (Hidden by default) -->
+          <div class="p-4" id="camera-section">
+            <div class="flex flex-col items-center gap-4">
+              <!-- Video element to display the camera stream -->
+              <video
+                id="video"
+                width="320"
+                height="240"
+                autoplay
+                class="border-2 border-[var(--secondary-color)] rounded-lg"
+              ></video>
+              <!-- Button to capture the photo -->
+              <button
+                id="capture-btn"
+                class="w-full flex h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)] mt-2"
+              >
+                <span class="material-symbols-outlined mr-2"> camera </span>
+                Capture Photo
+              </button>
+              <!-- Button to go back to upload section -->
+              <button
+                id="cancel-camera-btn"
+                class="w-full flex h-12 items-center justify-center rounded-full bg-gray-500 text-[var(--text-primary)] mt-2"
+              >
+                Cancel
+              </button>
             </div>
+          </div>
 
-            <!-- Preview Section (Hidden by default) -->
-            <div class="p-4" id="preview-section">
-                <div class="flex flex-col items-center gap-4">
-                    <!-- Canvas to display the captured image -->
-                    <canvas id="canvas" width="320" height="240" class="border-2 border-[var(--secondary-color)] rounded-lg hidden"></canvas>
-                    <!-- Image element to display the captured photo -->
-                    <img id="captured-image" src="" alt="Captured" class="border-2 border-[var(--secondary-color)] rounded-lg max-w-full h-auto hidden" />
-                    <p class="text-sm text-[var(--text-secondary)]">Photo captured! You can retake or send it.</p>
-                    <div class="flex gap-2 w-full">
-                        <button id="retake-btn" class="flex-1 h-12 items-center justify-center rounded-full bg-gray-500 text-[var(--text-primary)]">
+          <!-- Preview Section (Hidden by default) -->
+          <div class="p-4" id="preview-section">
+            <div class="flex flex-col items-center gap-4">
+              <!-- Canvas to display the captured image -->
+              <canvas
+                id="canvas"
+                width="320"
+                height="240"
+                class="border-2 border-[var(--secondary-color)] rounded-lg hidden"
+              ></canvas>
+              <!-- Image element to display the captured photo -->
+              <img
+                id="captured-image"
+                src=""
+                alt="Captured"
+                class="border-2 border-[var(--secondary-color)] rounded-lg max-w-full h-auto hidden"
+              />
+              <p class="text-sm text-[var(--text-secondary)]">
+                Photo captured! You can retake or send it.
+              </p>
+              <!-- <div class="flex gap-2 w-full">
+                <button
+                  id="retake-btn"
+                  class="flex-1 h-12 items-center justify-center rounded-full bg-gray-500 text-[var(--text-primary)]"
+                >
+                  Retake
+                </button>
+                <button
+                  id="send-photo-btn"
+                  class="flex-1 h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)]"
+                >
+                  <span class="material-symbols-outlined mr-2"> send </span>
+                  Send Photo
+                </button>
+              </div> -->
+              <div class="flex gap-2 w-full items-center justify-center gap-2">
+                        <button id="retake-btn" class="flex items-center justify-center gap-2 h-12 rounded-full bg-gray-500 text-[var(--text-primary)] p-6 ">
                             Retake
                         </button>
-                        <button id="send-photo-btn" class="flex-1 h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)]">
+                        <button id="send-photo-btn" class="flex items-center justify-center gap-2 h-12 rounded-full bg-[var(--primary-color)] text-[var(--text-primary)] p-6">
                             <span class="material-symbols-outlined mr-2"> send </span>
                             Send Photo
                         </button>
                     </div>
-                </div>
             </div>
+          </div>
 
-            <!-- Navigation -->
-            <nav class="flex items-center justify-around border-t border-[#233348] bg-black/50 pb-3 pt-2">
-                <a class="flex flex-col items-center gap-1 text-[var(--primary-color)]" href="#">
-                    <span class="material-symbols-outlined text-2xl"> forum </span>
-                    <span class="text-xs font-medium">Chat</span>
-                </a>
-                <a class="flex flex-col items-center gap-1 text-[var(--text-secondary)]" href="#">
-                    <span class="material-symbols-outlined text-2xl"> history </span>
-                    <span class="text-xs font-medium">History</span>
-                </a>
-            </nav>
+          <!-- Navigation -->
+          <nav
+            class="flex items-center justify-around border-t border-[#233348] bg-black/50 pb-3 pt-2"
+          >
+            <a
+              class="flex flex-col items-center gap-1 text-[var(--primary-color)]"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-2xl"> forum </span>
+              <span class="text-xs font-medium">Chat</span>
+            </a>
+            <a
+              class="flex flex-col items-center gap-1 text-[var(--text-secondary)]"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-2xl"> history </span>
+              <span class="text-xs font-medium">History</span>
+            </a>
+          </nav>
         </div>
+      </div>
     </div>
-</div>
 
-<script>
-    // Get DOM elements
-    const openCameraBtn = document.getElementById('open-camera-btn');
-    const cancelCameraBtn = document.getElementById('cancel-camera-btn');
-    const captureBtn = document.getElementById('capture-btn');
-    const retakeBtn = document.getElementById('retake-btn');
-    const sendPhotoBtn = document.getElementById('send-photo-btn');
-    const backToUploadBtn = document.getElementById('back-to-upload');
+    <script>
+      // Get DOM elements
+      const openCameraBtn = document.getElementById("open-camera-btn");
+      const cancelCameraBtn = document.getElementById("cancel-camera-btn");
+      const captureBtn = document.getElementById("capture-btn");
+      const retakeBtn = document.getElementById("retake-btn");
+      const sendPhotoBtn = document.getElementById("send-photo-btn");
+      const backToUploadBtn = document.getElementById("back-to-upload");
 
-    const uploadSection = document.getElementById('upload-section');
-    const cameraSection = document.getElementById('camera-section');
-    const previewSection = document.getElementById('preview-section');
-    const chatInterface = document.getElementById('chat-interface');
+      const uploadSection = document.getElementById("upload-section");
+      const cameraSection = document.getElementById("camera-section");
+      const previewSection = document.getElementById("preview-section");
+      const chatInterface = document.getElementById("chat-interface");
 
-    const video = document.getElementById('video');
-    const canvas = document.getElementById('canvas');
-    const capturedImage = document.getElementById('captured-image');
-    const chatMessages = document.getElementById('chat-messages');
-    const messageInput = document.getElementById('message-input');
-    const sendMessageBtn = document.getElementById('send-message');
+      const video = document.getElementById("video");
+      const canvas = document.getElementById("canvas");
+      const capturedImage = document.getElementById("captured-image");
+      const chatMessages = document.getElementById("chat-messages");
+      const messageInput = document.getElementById("message-input");
+      const sendMessageBtn = document.getElementById("send-message");
 
-    let stream = null; // To hold the camera stream
-    let capturedImageData = null; // To store the captured image data
+      let stream = null; // To hold the camera stream
+      let capturedImageData = null; // To store the captured image data
 
-    // Function to start the camera
-    async function startCamera() {
+      // Function to start the camera
+      async function startCamera() {
         try {
-            stream = await navigator.mediaDevices.getUserMedia({
-                video: { facingMode: { exact: "environment" } }
-            });
-            video.srcObject = stream;
-            uploadSection.style.display = 'none';
-            cameraSection.style.display = 'block';
+          stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: { exact: "environment" } },
+          });
+          video.srcObject = stream;
+          uploadSection.style.display = "none";
+          cameraSection.style.display = "block";
         } catch (err) {
-            // Fallback to any camera if environment is not available
-            try {
-                stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                video.srcObject = stream;
-                uploadSection.style.display = 'none';
-                cameraSection.style.display = 'block';
-            } catch (err2) {
-                console.error("Error accessing the camera: ", err2);
-                alert("Could not access the camera. Please ensure you have granted permission and that a camera is available.");
-            }
+          // Fallback to any camera if environment is not available
+          try {
+            stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+            uploadSection.style.display = "none";
+            cameraSection.style.display = "block";
+          } catch (err2) {
+            console.error("Error accessing the camera: ", err2);
+            alert(
+              "Could not access the camera. Please ensure you have granted permission and that a camera is available."
+            );
+          }
         }
-    }
+      }
 
-    // Function to stop the camera
-    function stopCamera() {
+      // Function to stop the camera
+      function stopCamera() {
         if (stream) {
-            stream.getTracks().forEach(track => track.stop());
-            stream = null;
+          stream.getTracks().forEach((track) => track.stop());
+          stream = null;
         }
         video.srcObject = null;
-    }
+      }
 
-    // Function to capture a photo
-    function capturePhoto() {
+      // Function to capture a photo
+      function capturePhoto() {
         // Draw the current video frame onto the canvas
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
-        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+        canvas
+          .getContext("2d")
+          .drawImage(video, 0, 0, canvas.width, canvas.height);
 
         // Convert canvas to data URL and set it as the image source
-        capturedImageData = canvas.toDataURL('image/png');
+        capturedImageData = canvas.toDataURL("image/png");
         capturedImage.src = capturedImageData;
-        capturedImage.classList.remove('hidden');
+        capturedImage.classList.remove("hidden");
 
         // Hide camera, show preview
-        cameraSection.style.display = 'none';
-        previewSection.style.display = 'block';
-    }
+        cameraSection.style.display = "none";
+        previewSection.style.display = "block";
+      }
 
-    // Function to add a message to the chat
-    function addMessage(text, isUser = false, imageUrl = null) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-        
+      // Function to add a message to the chat
+      function addMessage(text, isUser = false, imageUrl = null) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `message ${
+          isUser ? "user-message" : "bot-message"
+        }`;
+
         if (!isUser) {
-            const avatarDiv = document.createElement('div');
-            avatarDiv.className = 'message-avatar bot-avatar';
-            avatarDiv.textContent = 'B';
-            messageDiv.appendChild(avatarDiv);
+          const avatarDiv = document.createElement("div");
+          avatarDiv.className = "message-avatar bot-avatar";
+          avatarDiv.textContent = "B";
+          messageDiv.appendChild(avatarDiv);
         } else {
-            const avatarDiv = document.createElement('div');
-            avatarDiv.className = 'message-avatar user-avatar';
-            avatarDiv.textContent = 'Y';
-            messageDiv.appendChild(avatarDiv);
+          const avatarDiv = document.createElement("div");
+          avatarDiv.className = "message-avatar user-avatar";
+          avatarDiv.textContent = "Y";
+          messageDiv.appendChild(avatarDiv);
         }
-        
-        const contentDiv = document.createElement('div');
+
+        const contentDiv = document.createElement("div");
         contentDiv.textContent = text;
         messageDiv.appendChild(contentDiv);
-        
+
         if (imageUrl) {
-            const img = document.createElement('img');
-            img.src = imageUrl;
-            img.className = 'image-preview';
-            messageDiv.appendChild(img);
+          const img = document.createElement("img");
+          img.src = imageUrl;
+          img.className = "image-preview";
+          messageDiv.appendChild(img);
         }
-        
+
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
+      }
 
-    // Function to simulate AI response
-    function simulateAIResponse() {
+      // Function to simulate AI response
+      function simulateAIResponse() {
         setTimeout(() => {
-            addMessage("Hi there! I've analyzed your skin scan and have some insights for you. Based on the image, I've identified areas of concern and can recommend personalized treatments. Would you like to proceed with a detailed analysis and recommendations?");
+          addMessage(
+            "Hi there! I've analyzed your skin scan and have some insights for you. Based on the image, I've identified areas of concern and can recommend personalized treatments. Would you like to proceed with a detailed analysis and recommendations?"
+          );
         }, 1000);
-    }
+      }
 
-    // Function to send the captured image to backend (simulated)
-    async function sendImageToBackend(imageData) {
+      // Function to send the captured image to backend (simulated)
+      async function sendImageToBackend(imageData) {
         // In a real application, this would make an API call to your backend
         console.log("Sending image to backend...");
         console.log("Image data:", imageData.substring(0, 100) + "..."); // Log first 100 characters
-        
+
         // Simulate API call with fetch
         try {
-            // This is where you would actually call your backend API
-            // const response = await fetch('/api/analyze-image', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({ image: imageData }),
-            // });
-            // const result = await response.json();
-            // return result;
-            
-            // For demo purposes, just return a success message
-            return { success: true, message: "Image processed successfully" };
-        } catch (error) {
-            console.error("Error sending image to backend:", error);
-            throw error;
-        }
-    }
+          // This is where you would actually call your backend API
+          // const response = await fetch('/api/analyze-image', {
+          //     method: 'POST',
+          //     headers: {
+          //         'Content-Type': 'application/json',
+          //     },
+          //     body: JSON.stringify({ image: imageData }),
+          // });
+          // const result = await response.json();
+          // return result;
 
-    // Event Listeners
-    // openCameraBtn.addEventListener('click', startCamera);
-    // cancelCameraBtn.addEventListener('click', () => {
-    //     stopCamera();
-    //     cameraSection.style.display = 'none';
-    //     uploadSection.style.display = 'block';
-    // });
-    // captureBtn.addEventListener('click', capturePhoto);
-    // retakeBtn.addEventListener('click', () => {
-    //     previewSection.style.display = 'none';
-    //     startCamera(); // Restart the camera
-    // });
-     openCameraBtn.addEventListener('click', startCamera);
-    cancelCameraBtn.addEventListener('click', () => {
+          // For demo purposes, just return a success message
+          return { success: true, message: "Image processed successfully" };
+        } catch (error) {
+          console.error("Error sending image to backend:", error);
+          throw error;
+        }
+      }
+
+      // Event Listeners
+      // openCameraBtn.addEventListener('click', startCamera);
+      // cancelCameraBtn.addEventListener('click', () => {
+      //     stopCamera();
+      //     cameraSection.style.display = 'none';
+      //     uploadSection.style.display = 'block';
+      // });
+      // captureBtn.addEventListener('click', capturePhoto);
+      // retakeBtn.addEventListener('click', () => {
+      //     previewSection.style.display = 'none';
+      //     startCamera(); // Restart the camera
+      // });
+      openCameraBtn.addEventListener("click", startCamera);
+      cancelCameraBtn.addEventListener("click", () => {
         stopCamera();
-        cameraSection.style.display = 'none';
-        uploadSection.style.display = 'block';
-    });
-    captureBtn.addEventListener('click', capturePhoto);
-    retakeBtn.addEventListener('click', () => {
-        previewSection.style.display = 'none';
+        cameraSection.style.display = "none";
+        uploadSection.style.display = "block";
+      });
+      captureBtn.addEventListener("click", capturePhoto);
+      retakeBtn.addEventListener("click", () => {
+        previewSection.style.display = "none";
         startCamera(); // Restart the camera
-    });
-    // sendPhotoBtn.addEventListener('click', () => {
-    //     // Show the data URL of the captured image
-    //     alert('Image Data URL:\n' + capturedImage.src + '\n\nNote: The image is not saved to disk. It is only in memory (data URL in the browser).');
-    //     console.log('Captured Image Data URL:', capturedImage.src);
-        
-    //     // Hide the preview and show the upload section again
-    //     stopCamera();
-    //     previewSection.style.display = 'none';
-    //     uploadSection.style.display = 'block';
-    // });
-    sendPhotoBtn.addEventListener('click', async () => {
+      });
+      // sendPhotoBtn.addEventListener('click', () => {
+      //     // Show the data URL of the captured image
+      //     alert('Image Data URL:\n' + capturedImage.src + '\n\nNote: The image is not saved to disk. It is only in memory (data URL in the browser).');
+      //     console.log('Captured Image Data URL:', capturedImage.src);
+
+      //     // Hide the preview and show the upload section again
+      //     stopCamera();
+      //     previewSection.style.display = 'none';
+      //     uploadSection.style.display = 'block';
+      // });
+      sendPhotoBtn.addEventListener("click", async () => {
         // Show the chat interface
-        uploadSection.style.display = 'none';
-        previewSection.style.display = 'none';
-        chatInterface.style.display = 'flex';
-        
+        uploadSection.style.display = "none";
+        previewSection.style.display = "none";
+        chatInterface.style.display = "flex";
+
         // Add the user's message with the image
-        const fileName = "Skin_Scan_" + new Date().toISOString().replace(/[-:.]/g, '').slice(0, -5) + ".jpg";
+        const fileName =
+          "Skin_Scan_" +
+          new Date().toISOString().replace(/[-:.]/g, "").slice(0, -5) +
+          ".jpg";
         addMessage(fileName, true, capturedImageData);
-        
+
         // Send the image to backend (simulated)
         try {
-            const result = await sendImageToBackend(capturedImageData);
-            console.log("Backend response:", result);
-            
-            // Simulate AI response
-            simulateAIResponse();
+          const result = await sendImageToBackend(capturedImageData);
+          console.log("Backend response:", result);
+
+          // Simulate AI response
+          simulateAIResponse();
         } catch (error) {
-            console.error("Failed to send image to backend:", error);
-            addMessage("Sorry, there was an error processing your image. Please try again.");
+          console.error("Failed to send image to backend:", error);
+          addMessage(
+            "Sorry, there was an error processing your image. Please try again."
+          );
         }
-    });
-    
-    // Back to upload button
-    backToUploadBtn.addEventListener('click', () => {
-        chatInterface.style.display = 'none';
-        uploadSection.style.display = 'block';
+      });
+
+      // Back to upload button
+      backToUploadBtn.addEventListener("click", () => {
+        chatInterface.style.display = "none";
+        uploadSection.style.display = "block";
         // Clear chat messages
-        chatMessages.innerHTML = '';
-    });
-    
-    // Send message button
-    sendMessageBtn.addEventListener('click', () => {
+        chatMessages.innerHTML = "";
+      });
+
+      // Send message button
+      sendMessageBtn.addEventListener("click", () => {
         const message = messageInput.value.trim();
         if (message) {
-            addMessage(message, true);
-            messageInput.value = '';
-            
-            // Simulate AI response to user message
-            setTimeout(() => {
-                addMessage("Thank you for your message. I'm here to help with any questions you have about your skin analysis.");
-            }, 1000);
-        }
-    });
-    
-    // Allow sending message with Enter key
-    messageInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            sendMessageBtn.click();
-        }
-    });
-</script>
-<script src="https://cdn.tailwindcss.com/3.4.10  "></script>
+          addMessage(message, true);
+          messageInput.value = "";
 
-</body>
+          // Simulate AI response to user message
+          setTimeout(() => {
+            addMessage(
+              "Thank you for your message. I'm here to help with any questions you have about your skin analysis."
+            );
+          }, 1000);
+        }
+      });
+
+      // Allow sending message with Enter key
+      messageInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          sendMessageBtn.click();
+        }
+      });
+    </script>
+    <script src="https://cdn.tailwindcss.com/3.4.10  "></script>
+  </body>
 </html>
