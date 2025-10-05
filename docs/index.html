@@ -522,7 +522,7 @@
         stopCamera();
         cameraSection.style.display = "none";
         uploadSection.style.display = "block";
-        initialScreen.style.display = "block";
+        initialScreen.style.display = "flex";
       });
       captureBtn.addEventListener("click", capturePhoto);
       retakeBtn.addEventListener("click", () => {
@@ -572,7 +572,7 @@
       backToUploadBtn.addEventListener("click", () => {
         chatInterface.style.display = "none";
         uploadSection.style.display = "block";
-        initialScreen.style.display = "block";
+        initialScreen.style.display = "flex";
         
         // Clear chat messages
         chatMessages.innerHTML = "";
