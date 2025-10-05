@@ -26,11 +26,15 @@
     </style>
     <style>
       #chat-interface {
-        display: none;
+        display: hidden;
       }
       /* Hide the camera section by default */
       #camera-section {
         display: none;
+      }
+      #initial-screen {
+        display:flex;
+        visibility: visible;
       }
       /* Hide the preview section by default */
       /* #preview-section {
@@ -386,7 +390,7 @@
           });
           video.srcObject = stream;
           uploadSection.style.display = "none";
-          initialScreen.style.display = "hidden";
+          initialScreen.style.visibility = "hidden";
           cameraSection.style.display = "block";
         } catch (err) {
           // Fallback to any camera if environment is not available
@@ -394,7 +398,7 @@
             stream = await navigator.mediaDevices.getUserMedia({ video: true });
             video.srcObject = stream;
             uploadSection.style.display = "none";
-            initialScreen.style.display = "hidden";
+            initialScreen.style.visibility = "hidden";
             cameraSection.style.display = "block";
           } catch (err2) {
             console.error("Error accessing the camera: ", err2);
@@ -430,7 +434,7 @@
 
         // Hide camera, show preview
         cameraSection.style.display = "none";
-        initialScreen.style.display = "hidden";
+        initialScreen.style.visibility = "hidden";
         previewSection.style.display = "block";
       }
 
@@ -542,7 +546,7 @@
       sendPhotoBtn.addEventListener("click", async () => {
         // Show the chat interface
         uploadSection.style.display = "none";
-        initialScreen.style.display = "hidden";
+        initialScreen.style.visibility = "hidden";
         previewSection.style.display = "none";
         chatInterface.style.display = "flex";
 
