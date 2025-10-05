@@ -212,7 +212,7 @@
             <div class="flex flex-col items-center gap-4">
               <!-- Replace the file input label with a camera button -->
               <button
-                id="open-camera-btn"
+                id="open-camera-box"
                 class="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-[var(--secondary-color)] rounded-lg cursor-pointer hover:bg-[var(--secondary-color)]/20"
               >
                 <div
@@ -232,10 +232,11 @@
                 </div>
               </button>
               <button
+              id="open-camera-btn"
                 class="w-full flex h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)] mt-2 gap-2"
               >
-                <span class="material-symbols-outlined">send</span>
-                <span class="flex items-center">Send</span>
+                <span class="material-symbols-outlined">camera_alt</span>
+                <span class="flex items-center">Tap to Click</span>
               </button>
             </div>
           </div>
@@ -289,21 +290,7 @@
               <p class="text-sm text-[var(--text-secondary)]">
                 Photo captured! You can retake or send it.
               </p>
-              <!-- <div class="flex gap-2 w-full">
-                <button
-                  id="retake-btn"
-                  class="flex-1 h-12 items-center justify-center rounded-full bg-gray-500 text-[var(--text-primary)]"
-                >
-                  Retake
-                </button>
-                <button
-                  id="send-photo-btn"
-                  class="flex-1 h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)]"
-                >
-                  <span class="material-symbols-outlined mr-2"> send </span>
-                  Send Photo
-                </button>
-              </div> -->
+              <!-- Buttons to retake or send the photo -->
               <div class="flex gap-2 w-full">
                         <button id="retake-btn" class="flex-1 h-12 items-center justify-center rounded-full bg-gray-500 text-[var(--text-primary)]">
                             Retake
@@ -342,6 +329,7 @@
     <script>
       // Get DOM elements
       const openCameraBtn = document.getElementById("open-camera-btn");
+      const openCameraBox = document.getElementById("open-camera-box");
       const cancelCameraBtn = document.getElementById("cancel-camera-btn");
       const captureBtn = document.getElementById("capture-btn");
       const retakeBtn = document.getElementById("retake-btn");
