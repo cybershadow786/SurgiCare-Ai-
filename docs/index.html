@@ -154,6 +154,10 @@
         justify-content: center;
         cursor: pointer;
       }
+      .send-btn span.material-symbols-outlined {
+        font-size: 22px;
+        line-height: 0;
+    }
     </style>
   </head>
   <body class="bg-[var(--background-color)] font-sans">
@@ -316,7 +320,7 @@
                 </button>
                 <button
                   id="send-photo-btn"
-                  class="flex-1 h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)]"
+                  class="flex items-center justify-center gap-2 h-12 w-full rounded-full bg-[var(--primary-color)] text-[var(--text-primary)] mt-2"
                 >
                   <span class="material-symbols-outlined mr-2"> send </span>
                   Send Photo
