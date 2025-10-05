@@ -36,15 +36,14 @@
       /* #preview-section {
         display: none;
       } */
-     
+
       #preview-section {
-         display: none;
+        display: none;
         background: transparent;
         backdrop-filter: blur(4px);
         z-index: 20;
         position: relative;
       }
-     
 
       .send-btn span.material-symbols-outlined {
         font-size: 22px;
@@ -240,7 +239,7 @@
                 </div>
               </button>
               <button
-              id="open-camera-btn"
+                id="open-camera-btn"
                 class="w-full flex h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)] mt-2 gap-2"
               >
                 <span class="material-symbols-outlined">camera_alt</span>
@@ -299,7 +298,7 @@
                 Photo captured! You can retake or send it.
               </p>
               <!-- Buttons to retake or send the photo -->
-              <div class="flex gap-2 w-full">
+              <!-- <div class="flex gap-2 w-full">
                         <button id="retake-btn" class="flex-1 h-12 items-center justify-center rounded-full bg-gray-500 text-[var(--text-primary)]">
                             Retake
                         </button>
@@ -307,7 +306,22 @@
                             <span class="material-symbols-outlined mr-2"> send </span>
                             Send Photo
                         </button>
-                    </div>
+                    </div> -->
+              <div class="flex gap-2 w-full">
+                <button
+                  id="retake-btn"
+                  class="flex-1 h-12 items-center justify-center rounded-full bg-gray-500 text-[var(--text-primary)]"
+                >
+                  Retake
+                </button>
+                <button
+                  id="send-photo-btn"
+                  class="flex-1 h-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-[var(--text-primary)]"
+                >
+                  <span class="material-symbols-outlined mr-2"> send </span>
+                  Send Photo
+                </button>
+              </div>
             </div>
           </div>
 
